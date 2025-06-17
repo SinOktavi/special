@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎂 Surprise! Happy Birthday! 🎉</title>
+  <style>
+    body {
+      background-color: #fef6f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #ff4081;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: #ffb347;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 10px #e08e2b;
+    }
+
+    .cake::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 30px;
+      background: #ff6f61;
+      border-radius: 15px 15px 0 0;
+      box-shadow: 0 -5px #e64a19;
+    }
+
+    .candle {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 40px;
+      background: #ff4081;
+      border-radius: 5px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fff200 40%, transparent 70%);
+      border-radius: 50%;
+      animation: flicker 0.2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    @keyframes flicker {
+      0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+      100% {
+        opacity: 0.6;
+        transform: translateX(-50%) scale(1.2);
+      }
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      animation: pop 1s infinite alternate;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); color: #ff4081; }
+      100% { transform: scale(1.05); color: #ff79a8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+  <div class="message">🎉 Happy Birthday to You! 🎂</div>
+
+  <!-- Auto play birthday song -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
